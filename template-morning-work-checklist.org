@@ -1,13 +1,11 @@
-PROPERTIES:
-:ID:       F8113CBF-BD39-4636-BFCF-3EC867DF155B
-:END:
 [[id:F9247011-8BF7-4EA8-9225-AE2F71BB47A4][dailies]] [[id:6DB243A1-031D-4447-8C3F-70615A2237DB][2022]]
 
-* Morning checklist [0/10]
+* Morning checklist [0/11]
 
 {%if shouldJournal%}
-- [ ] write for 5 minutes [[file:../personal-daily-2022.org][personal-daily-2022]]
+- [ ] write for 5 minutes [[file:../personal-daily-2022.org][personal-daily-2022]]  
 {% endif %}
+
 {%if shouldImportant%}
 - [ ] Write in [[file:../important-things-daily-2022.org][important-things-2022 daily
 ]]{%endif%}
@@ -20,10 +18,26 @@ PROPERTIES:
 - [ ] estimate and add to org-hs
 - [ ] what difficulties might you have with the tasks
 {%endif%}
+- [ ] what should be the focus for the week?
+
+{% if shouldReview %}
+- [ ] do a quick [[elisp:(org-agenda nil "R")][review]]
+{% endif %}
+
+
+{% if shouldShowFocus %}
+{{ focusContents }}
+{% endif %}
 
 * Tasks [/]
 ** 
 
 
 
-
+* End of day check list
+- [ ] what did you do today?
+{% if isFriday %}
+- [ ] what should be done next week?
+{% else %}
+- [ ] what should be done tomorrow?
+{%endif %}
